@@ -1,26 +1,68 @@
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
-
+# render:
+#   html: hexo-renderer-pandoc
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
+
+# # title: MTFTau-5的小站
+# # subtitle: MTFTau-5的个人博客，佳代子单推人（佳门）
+# # logo: /images/logo/1734363241907.jpg
+# # description: ''
+# # keywords:
+# # author: MTFTau-5
+# # language: zh-CN , en
+# # timezone: ''
+
+
+title: future_rule`Blog
+subtitle: '唯有热爱可抵岁月漫长'
+logo: /images/logo/tech_cat_logo.svg
+description: '博客， 一个分享知识的博客'
+keywords: ‘间尺,间,尺,future_rule’
+author: future_rule
+language: zh-CN
 timezone: ''
+nav:
+  # Navigation bar logo image
+  logo: /images/logo/tech_cat_logo.svg
+  display_title: true
+  # Whether to fix navigation bar
+  fixed: false
+code_blocks:
+  # Code block theme: darker / pale night / light / ocean / false
+  theme: light
+  macStyle: false
+  # Code block height limit (unit: px)
+  height_limit: false
+  word_wrap: false
+
+  # Toolbar
+  copy: true
+  language: true
+  # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
+  shrink: false
+  fullpage: false
+
+menu:
+  首页: / || fas fa-home
+  时间轴: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  清单||fa fa-heartbeat:
+  音乐: /music/ || fas fa-music
+  照片: /Gallery/ || fas fa-images
+  电影: /movies/ || fas fa-video
+  友情链接: /link/ || fas fa-link
+  有关部分: /about/ || fas fa-heart
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
-permalink_defaults:
-pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
-
+## url: https://mtftau-5.github.io/
+url: https://crab-labor.netlify.app/
 # Directory
+permalink: posts/:abbrlink.html
 source_dir: source
 public_dir: public
 tag_dir: tags
@@ -96,9 +138,56 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
+# render:
+#   html: hexo-renderer-pandoc 
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: git@github.com:Crab-labor/Crab-labor.github.io.git
+  branch: main
+aplayer:
+  asset_inject: false   # 让插件不再自动插脚本
+
+abbrlink:
+  alg: crc32
+  rep: hex
+
+  search:
+    path: search.xml
+    field: all
+    contene: true
+  # meta: true          # 包含元数据
+  # pages: true
+  # posts: true
+  # categories: true
+  # tags: true
+  # template: json
+  # route: music.json       # 生成的 JSON 路径为 /music.json
+  # folder: music/          # 对应 source/music/ 目录（省略 source，Hexo 内部处理）
+  # date: true            # 包含日期信息
+# Live2D
+## https://github.com/EYHN/hexo-helper-live2d
+#Live2D动画
+# live2d:
+#   enable: true
+#   scriptFrom: local  # 使用本地脚本（推荐）
+#   pluginRootPath: live2dw/  # 插件根目录
+#   pluginJsPath: lib/  # JS 文件路径
+#   pluginModelPath: assets/  # 模型路径
+#   tagMode: false  # 是否仅对特定文章生效
+#   debug: false  # 调试模式
+#   model:
+#     use: live2d-widget-model-koharu # 默认模型（推荐 Shizuku）
+#   display:
+#     position: left # 位置（left/right）
+#     width: 150 # 宽度
+#     height: 300  # 高度
+#   mobile:
+#     show: true  # 手机端是否显示
+#   react:
+#     opacity: 0.7  # 透明度
+
+    # 让插件不再自动插脚本

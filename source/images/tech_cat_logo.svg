@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 猫头轮廓 -->
+  <path d="M100,40 C70,40 40,70 40,100 C40,130 70,160 100,160 C130,160 160,130 160,100 C160,70 130,40 100,40 Z" fill="#6C63FF"/>
+  
+  <!-- 猫耳朵 -->
+  <polygon points="80,20 90,50 70,50" fill="#FF6584"/>
+  <polygon points="120,20 130,50 110,50" fill="#FF6584"/>
+  
+  <!-- 眼睛（显示屏样式） -->
+  <rect x="70" y="80" width="25" height="20" rx="5" fill="#1E1E2E"/>
+  <rect x="105" y="80" width="25" height="20" rx="5" fill="#1E1E2E"/>
+  <rect x="75" y="85" width="15" height="10" rx="3" fill="#00D2FF"/>
+  <rect x="110" y="85" width="15" height="10" rx="3" fill="#00D2FF"/>
+  
+  <!-- 鼻子（心形） -->
+  <path d="M100,110 C102,108 104,108 106,110 C104,112 102,112 100,110 Z" fill="#FF6584"/>
+  
+  <!-- 胡须（电路板纹路线条） -->
+  <line x1="60" y1="110" x2="75" y2="108" stroke="#1E1E2E" stroke-width="2"/>
+  <line x1="60" y1="120" x2="75" y2="118" stroke="#1E1E2E" stroke-width="2"/>
+  <line x1="125" y1="108" x2="140" y2="110" stroke="#1E1E2E" stroke-width="2"/>
+  <line x1="125" y1="118" x2="140" y2="120" stroke="#1E1E2E" stroke-width="2"/>
+  
+  <!-- 头顶WiFi信号 -->
+  <circle cx="100" cy="50" r="5" fill="#00D2FF"/>
+  <path d="M100,45 Q100,35 90,35" stroke="#00D2FF" fill="none" stroke-width="2"/>
+  <path d="M100,40 Q100,25 80,25" stroke="#00D2FF" fill="none" stroke-width="2"/>
+  
+  <!-- 猫须节点（装饰点） -->
+  <circle cx="60" y1="110" r="3" fill="#00D2FF"/>
+  <circle cx="140" y1="110" r="3" fill="#00D2FF"/>
+</svg>
