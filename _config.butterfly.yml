@@ -1,6 +1,6 @@
 
 title: future_rule`Blog
-logo: /images/logo/tech_cat_logo.svg
+logo: /images/v.jpg
 description: ''
 keywords:
 author: future_rule
@@ -8,7 +8,7 @@ language: zh-CN , en
 timezone: ''
 nav:
   # Navigation bar logo image
-  logo: /images/logo/tech_cat_logo.svg
+  logo: /images/v.jpg
   display_title: true
   # Whether to fix navigation bar
   fixed: false
@@ -58,12 +58,12 @@ social:
 # --------------------------------------
 
 # 網站的 favicon 圖標
-favicon: /images/OIP.jpg
+favicon: /images/favicon.avif
 
 # 頭像設置
 avatar:
   # 頭像圖片鏈接
-  img: /images/OIP.jpg
+  img: /images/avatar.jpg
   # 是否啟用頭像效果
   effect: false
 
