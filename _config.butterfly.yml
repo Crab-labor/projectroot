@@ -18,7 +18,7 @@ menu:
   List||fas fa-list:
     Music: /music/ || fas fa-music
     Movie: /movies/ || fas fa-video
-    Link: /link/ || fa fa-link
+    Link: /links/ || fas fa-link
 links:
   enable: true
   # 如果你的主题版本支持分组，确保：
@@ -435,7 +435,7 @@ translate:
 readmode: true
 
 # 暗黑模式設置
-# darkmode:
+# live2d:
 #   # 是否啟用暗黑模式
 #   enable: true
 #   # 切換暗黑/明亮模式的按鈕
@@ -1342,5 +1342,5 @@ inject:
     # 其他底部脚本（如果有）
 darkmode:
   enable: false
-live2d:
-  enable: false
+# live2d:
+#  enable: false
