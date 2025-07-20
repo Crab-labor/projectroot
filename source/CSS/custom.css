@@ -1,5 +1,5 @@
 :root {
-  --global-bg: url('/images/backgroung.jpg') no-repeat center center fixed !important;
+  --global-bg: url('/images/backgroung.png') no-repeat center center fixed !important;
   background-size: cover !important;
 }
 body {
