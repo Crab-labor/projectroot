@@ -1,8 +1,11 @@
+/* ====================== 全局样式 ====================== */
+/* 定义全局背景图变量 */
 :root {
   --global-bg: url('/images/background.png') no-repeat center center fixed !important;
   background-size: cover !important;
 }
 
+/* 页面主体样式 */
 body {
   background: var(--global-bg) !important;
   background-size: cover !important;
@@ -10,45 +13,77 @@ body {
   z-index: 0;
 }
 
+/* 在背景图上添加深色半透明遮罩层，增强文字对比度 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /* 深色半透明遮罩 */
+  z-index: -1;
+  /* 置于背景之上，内容之下 */
+  pointer-events: none;
+  /* 防止遮罩层阻挡用户操作 */
+}
+
+/* 确保所有内容显示在遮罩层之上 */
 body>* {
   position: relative;
   z-index: 1;
 }
 
-/* 导航栏透明 */
+/* ====================== 导航栏透明效果 ====================== */
 .header {
-  /* 替换为实际类名，如 #header */
   background: transparent !important;
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
-  /* 兼容 Safari */
+  backdrop-filter: blur(8px);
+  /* 增强模糊效果 */
+  -webkit-backdrop-filter: blur(8px);
+  /* Safari兼容 */
   position: relative;
   z-index: 10;
+  background: rgba(15, 15, 25, 0.7) !important;
+  /* 深色半透明背景，提高导航栏可读性 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  /* 添加阴影增强层次感 */
 }
 
 .header a,
 .header .menu-item {
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  /* 增强文字阴影 */
+  font-weight: 500;
+  /* 增加字体粗细 */
 }
 
 .header .menu-item:hover {
   color: #ddd !important;
 }
 
-/* 文章框透明 */
+/* ====================== 文章内容区域 ====================== */
 .post-content,
 .page-content {
-  /* 替换为实际类名 */
-  background: transparent !important;
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(25, 25, 35, 0.6) !important;
+  /* 深色半透明背景，提高可读性 */
+  backdrop-filter: blur(8px) saturate(150%);
+  /* 增强模糊和饱和度 */
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  padding: 2rem !important;
+  /* 增加内边距 */
+  border-radius: 12px;
+  /* 圆角 */
+  margin: 1.5rem 0;
+  /* 增加外边距 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  /* 添加阴影 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* 添加边框 */
 }
 
+/* 文章内文字样式 */
 .post-content p,
 .post-content h1,
 .post-content h2,
@@ -58,7 +93,18 @@ body>* {
 .page-content h2,
 .page-content a {
   color: #fff !important;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
+  /* 双层阴影增强效果 */
+}
+
+/* 标题特殊处理 */
+.post-content h1,
+.post-content h2,
+.page-content h1,
+.page-content h2 {
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  /* 左侧装饰线 */
+  padding-left: 15px !important;
 }
 
 .post-content a:hover,
@@ -66,135 +112,124 @@ body>* {
   color: #ddd !important;
 }
 
+/* ====================== 页面头部 ====================== */
 #page-header {
   background: transparent !important;
-  /* 移除蓝色背景 */
   background-color: transparent !important;
-  /* 确保覆盖 */
 }
 
 .page-header.full_page {
   background: transparent !important;
-  /* 覆盖 full_page 样式 */
 }
 
+/* ====================== 文章列表项 ====================== */
 #recent-posts .recent-post-item {
-  background: transparent !important;
-  /* 确保最近文章项透明 */
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(25, 25, 35, 0.6) !important;
+  /* 深色半透明背景 */
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
+  padding: 1.5rem !important;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* 卡片悬停效果 */
 cardHover,
 .layout>div:first-child:not(.nc) {
-  background: transparent !important;
-  /* 确保卡片透明 */
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(25, 25, 35, 0.6) !important;
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* 文章标题样式 */
 #recent-posts .recent-post-item>.recent-post-info>.article-title {
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
+/* ====================== 侧边栏 ====================== */
 #aside-content .card-widget {
-  background: transparent !important;
-  /* 确保侧边栏卡片透明 */
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(25, 25, 35, 0.6) !important;
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
+  padding: 1.5rem !important;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #aside-content .card-info #card-info-btn {
   background: transparent !important;
-  /* 确保侧边栏按钮透明 */
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
+/* 音乐播放器样式 */
 .aplayer {
-  background: transparent !important;
-  /* 确保音乐播放器透明 */
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(25, 25, 35, 0.6) !important;
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
 }
 
+/* ====================== 标题样式 ====================== */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-h7,
-h8 {
+h6 {
   color: #fff !important;
-  /* 确保标题文字颜色 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
+/* ====================== 目录链接 ====================== */
 #aside-content #card-toc .toc-content .toc-link {
   color: #fff !important;
-  /* 确保目录链接颜色 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
+/* ====================== 侧边栏列表 ====================== */
 #aside-content .aside-list>.aside-list-item .content>.title,
 #aside-content .aside-list>.aside-list-item .content>.comment {
   background: transparent !important;
-  /* 确保侧边栏列表透明 */
-  backdrop-filter: blur(5px);
-  /* 可选：毛玻璃效果 */
-  -webkit-backdrop-filter: blur(5px);
   color: #fff !important;
-  /* 白色文字 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
+/* ====================== 站点数据 ====================== */
 .site-data>a .headline {
   color: #fff !important;
-  /* 确保站点数据链接颜色 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
 .site-data>a .length-number {
   color: #fff !important;
-  /* 确保站点数据数字颜色 */
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  /* 阴影提高可读性 */
+  text-shadow: 0 0 3px #000, 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-/* 确保 body 背景不被覆盖 */
-body {
+/* 确保body背景不被覆盖（已通过body::before实现遮罩，此处可省略） */
+/* body {
   background: var(--global-bg) !important;
   background-size: cover !important;
   position: relative;
   z-index: 0;
-}
+} */

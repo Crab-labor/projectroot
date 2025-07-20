@@ -1273,7 +1273,7 @@ inject:
 #       </script>
 #     - |  # 添加这个增强样式块
 #       <style>
-#         /* 强制全局字体颜色 */
+#         /* 强制全局颜色 */
 #         body,
 #         .post-title,
 #         .post-content,
