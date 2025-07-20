@@ -1245,6 +1245,20 @@ CDN:
 #     show: true  # 手机端是否显示
 #   react:
 #     opacity: 0.7  # 透明度
+
+# inject:
+#   head:
+#     - <link rel="stylesheet" href="/css/custom.css">
+#     - |
+#       <!-- Google tag (gtag.js) -->
+#       <script async src="https://www.googletagmanager.com/gtag/js?id=G-F79JES1TPV"></script>
+#       <script>
+#         window.dataLayer = window.dataLayer || [];
+#         function gtag(){dataLayer.push(arguments);}
+#         gtag('js', new Date());
+#         gtag('config', 'G-F79JES1TPV');
+#       </script>
+
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
@@ -1257,6 +1271,26 @@ inject:
         gtag('js', new Date());
         gtag('config', 'G-F79JES1TPV');
       </script>
+    - |  # 添加这个样式块
+      <style>
+        /* 浅色模式字体 */
+        :root {
+          --text-color: #333333 !important; /* 深灰色 */
+          --font-color: #333333 !important;
+        }
+        
+        /* 深色模式字体 */
+        [data-theme="dark"] {
+          --text-color: #E0E0E0 !important; /* 浅灰色 */
+          --font-color: #E0E0E0 !important;
+        }
+        
+        /* 增强正文对比度 */
+        .post-content {
+          color: var(--text-color) !important;
+          line-height: 1.8;
+        }
+      </style>
   bottom:
     # 其他底部脚本（如果有）
 darkmode:
