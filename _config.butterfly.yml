@@ -1,6 +1,6 @@
 
 title: future_rule`Blog
-logo: /images/logo/1734363241907.jpg
+logo: /images/logo/tech_cat_logo.svg
 description: ''
 keywords:
 author: future_rule
@@ -8,7 +8,7 @@ language: zh-CN , en
 timezone: ''
 nav:
   # Navigation bar logo image
-  logo: /images/logo/1734363241907.jpg
+  logo: /images/logo/tech_cat_logo.svg
   display_title: true
   # Whether to fix navigation bar
   fixed: false
@@ -58,12 +58,12 @@ social:
 # --------------------------------------
 
 # 網站的 favicon 圖標
-favicon: /img/favicon.png
+favicon: /images/OIP.jpg
 
 # 頭像設置
 avatar:
   # 頭像圖片鏈接
-  img: /images/logo/favicon.jpg
+  img: /images/OIP.jpg
   # 是否啟用頭像效果
   effect: false
 
@@ -103,7 +103,7 @@ footer_img: false
 # 圖片格式: url(http://xxxxxx.com/xxx.jpg)
 # 主题背景设置
 background:
-  default: /images/background.jpg
+  default: /images/background.png
   size: cover
   repeat: no-repeat
   position: center
@@ -113,9 +113,9 @@ background:
 # 替換損壞的圖片
 error_img:
   # 友鏈頁面的錯誤圖片
-  flink: /img/friend_404.gif
+  flink: # /image/friend_404.gif
   # 文章頁面的錯誤圖片
-  post_page: /img/404.jpg
+  post_page: # /images/404.jpg
 
 # 簡單的 404 頁面
 error_404:
@@ -329,14 +329,14 @@ aside:
       # 按鈕圖標
       icon: fab fa-github
       # 按鈕文本
-      text: krkrdkdk，无论是谁我都很喜欢偶（户山香橙音）
+      text: 传送github
       # 按鈕鏈接
-      link: https://github.com/MTFTau-5
+      link: https://github.com/Crab-labor
   card_announcement:
     # 是否顯示公告卡片
     enable: true
     # 公告內容
-    content: 欢迎来到 MTFTau-5的小站！这里是我的个人博客，会写一些关于个人专业，人工智能深度学习的文章，希望你们喜欢，个人的qq为2968494219，微信为nmap_Pn欢迎联系。
+    content: 热爱编程让我们相遇！在这里，我们不仅会深入探讨 C/C++ 编程的核心技巧，还会带你走进 Linux 网络编程和系统编程的精彩世界！Crab-labor 是你进阶学习的最佳伙伴。欢迎一起分享！
   card_recent_post:
     # 是否顯示最近文章卡片
     enable: true
@@ -535,11 +535,11 @@ math:
 # 搜索設置
 # --------------------------------------
 
-#search:
+search:
   # 選擇：algolia_search / local_search / docsearch
   # 如果不需要搜索功能，保持為空
-  #use:
-  #placeholder:
+  use: local_search
+  placeholder: "搜索文章、标签..."
 
   # Algolia 搜索
 algolia_search:
@@ -551,17 +551,17 @@ algolia_search:
   # 本地搜索
 local_search:
     # 頁面加載時預加載搜索數據
-  enable: true
-  preload: false
-  CDN:
+  enable: true  # 本地搜索
+  preload: true # 预加载搜索数据
+  CDN: # CDN加速
 
   # Docsearch
   # https://docsearch.algolia.com/
-  docsearch:
-    appId:
-    apiKey:
-    indexName:
-    option:
+docsearch:
+  appId:
+  apiKey:
+  indexName:
+  option:
 
 # --------------------------------------
 # 分享系統

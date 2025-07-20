@@ -15,17 +15,17 @@
 # # timezone: ''
 
 
-title: future_rule`Blog
+title: Crab-labor`Blog
 subtitle: '唯有热爱可抵岁月漫长'
-logo: /images/logo/tech_cat_logo.svg
+#logo: /images/logo/tech_cat_logo.svg
 description: '博客， 一个分享知识的博客'
-keywords: ‘间尺,间,尺,future_rule’
-author: future_rule
+keywords: ‘间尺,间,尺,future_rule,Crab-labor’
+author: Crab-labor
 language: zh-CN
 timezone: ''
 nav:
   # Navigation bar logo image
-  logo: /images/logo/tech_cat_logo.svg
+  #logo: /images/logo/tech_cat_logo.svg
   display_title: true
   # Whether to fix navigation bar
   fixed: false
